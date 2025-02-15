@@ -86,20 +86,22 @@ get_aspera_token <- function(path, token) {
 
 get_aspera_path <- function() {
   if (.Platform$OS.type == "windows") {
-    "C:/aspera/cli"
+    path <- "C:/aspera/cli"
   } else if (Sys.info()["sysname"] == "Darwin") {
-    file.path(Sys.getenv("HOME"), "Applications/Aspera CLI")
+    path <- file.path(Sys.getenv("HOME"), "Applications/Aspera CLI")
   } else if (.Platform$OS.type == "unix") {
-    file.path(Sys.getenv("HOME"), ".aspera/cli")
+    path <- file.path(Sys.getenv("HOME"), ".aspera/cli")
+    if (!file.exists(path)){path <- file.path(Sys.getenv("HOME"), ".aspera/connect")}
   } else {
     stop("Unsupported operating system...")
   }
+  return(path)
 }
 
 check_path <- function(path) {
   if (!file.exists(path)) {
     stop(
-      path, " does not exist. Check your Apsera CLI installation.\n",
+      path, " does not exist. Check your Aspera CLI installation.\n",
       "  Download and install Aspera CLI if you haven't already done so.\n",
       "  https://downloads.asperasoft.com/en/documentation/62"
     )
