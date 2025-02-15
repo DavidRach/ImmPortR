@@ -124,7 +124,7 @@ get_aspera <- function(aspera_path) {
   list(ascp = ascp, key_file = key_file)
 }
 
-#' Downlaod file or directory from ImmPort
+#' Download file or directory from ImmPort
 #'
 #' @param path A character. File or directory to download.
 #' @param output_dir A character. Output directory.

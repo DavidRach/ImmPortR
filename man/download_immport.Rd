@@ -2,7 +2,7 @@
 % Please edit documentation in R/aspera.R
 \name{download_immport}
 \alias{download_immport}
-\title{Downlaod file or directory from ImmPort}
+\title{Download file or directory from ImmPort}
 \usage{
 download_immport(path, output_dir = ".", aspera_path = NULL, verbose = FALSE)
 }
@@ -24,7 +24,7 @@ A list with components:
   * timeout Whether the process was killed because of a timeout.
 }
 \description{
-Downlaod file or directory from ImmPort
+Download file or directory from ImmPort
 }
 \examples{
 \dontrun{
